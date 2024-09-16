@@ -1,0 +1,6 @@
+@MyBody.WebApp_HostAddress = http://localhost:5245
+
+GET {{MyBody.WebApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
