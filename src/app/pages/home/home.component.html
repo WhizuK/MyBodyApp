@@ -1,0 +1,42 @@
+<div class = "container mt-5">
+    <button class="btn btn-success w-100"[routerLink]="['/newProfile']" routerLinkActive="router-link-active" >New Profile</button>
+    <div>
+      <label class="form-label">Seach</label>
+      <input class="form-control" type="text" placeholder="Qual perfil deseja Procurar"(input)="seach($event)">
+    </div>    
+</div>    
+
+
+
+  <table class="table container table-hover table-bordered mt-5 ">
+      <thead class="table-dark">
+        <tr >
+          <th>Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody >
+                @if (user.length > 0) {
+                  @for (user of user; track $index) {
+
+                    <tr>
+                          <td>{{user.name}}</td>
+                          <td style="text-align:end"> 
+                            <button class="btn btn-info mx-2" routerLink="" >Details</button>
+                            <button class="btn btn-warning mx-2" routerLink="/update/{{user.id}}" >Update</button>
+                            <button class="btn btn-danger mx-2" (click)="delete(user.id)">Delete</button>
+                          </td>
+                    </tr>
+                  }
+
+                }   @else {
+
+                  <tr class="text-center" > 
+                    <td colspan="7">No profile registered</td>
+                  </tr>
+                }
+              
+      </tbody>
+    </table>
+
+   

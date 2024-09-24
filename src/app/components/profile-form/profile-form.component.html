@@ -1,0 +1,86 @@
+<h1 style="font-family: 'Poppins', sans-serif; font-size: 40px; font-weight: 700; text-align: center;" class="mt-2">{{btnTitle}}</h1>
+<div style="text-align:center" class=" mt-3">
+    <form [formGroup]="profileForm" (ngSubmit)="OnSubmit()" #formDit="ngForm">
+      <fieldset>
+      <div class=" col-md-3 container">
+        <label for="name" class="form-label mt-4" class="col-form-label custom-label">Name:</label>
+        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Insert the name" required>
+      </div>
+      
+      <h1 style="font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 700; text-align: center;" class="mt-2">Body Composition </h1>
+      
+      <div [formGroupName]="'bodyComposition'">
+        <div class=" col-md-3 container">
+          <label for="body Fat" class="form-label mt-4" class="col-form-label custom-label">Body Fat:</label>
+          <input type="number" class="form-control " id="bodyFat" formControlName="bodyFat" placeholder="Insert your body fat" required>
+        </div>
+        <div class=" col-md-3 container">
+          <label for="body Mass" class="col-form-label custom-label">Body Mass:</label>
+          <input type="number" class="form-control "id="bodyMass" formControlName="bodyMass" placeholder="Insert your body mass" required>
+        </div>
+        <div class=" col-md-3 container">
+          <label for="bodyWanter" class="form-label mt-4" class="col-form-label custom-label">Body Water:</label>
+          <input type="number"class="form-control "id="bodyWanter" formControlName="bodyWanter" placeholder="Insert your body water" required>
+        </div>
+        <div class=" col-md-3 container">
+          <label for="weightBone" class="form-label mt-4" class="col-form-label custom-label">Weight Bone:</label>
+          <input type="number" class="form-control "id="weightBone" formControlName="weightBone" placeholder="Insert your weight bone" required>
+        </div>
+      </div>
+
+      <h1 style="font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 700; text-align: center;" class="mt-2">Body Measurements</h1>
+      
+      <div [formGroupName]="'bodyMeasurements'">
+        <div class=" col-md-3 container">
+          <label for="measureChest" class="form-label mt-4" class="col-form-label custom-label">Chest Measurement:</label>
+          <input type="number" class="form-control "id="measureChest" formControlName="measureChest" placeholder="Insert your chest measurement" required>
+        </div>
+        <div class=" col-md-3 container">
+          <label for="measureShoulders" class="form-label mt-4" class="col-form-label custom-label">Shoulders Measurement:</label>
+          <input type="number" class="form-control "id="measureShoulders" formControlName="measureShoulders" placeholder="Insert your shoulders measurement" required>
+        </div>
+        <div class=" col-md-3 container">
+          <label for="measureLeftArm" class="form-label mt-4" class="col-form-label custom-label">Left Arm Measurement:</label>
+          <input type="number" class="form-control "id="measureLeftArm" formControlName="measureLeftArm" placeholder="Insert your left arm measurement" required>
+        </div>
+        <div class=" col-md-3 container">
+          <label for="measureRightArm" class="form-label mt-4" class="col-form-label custom-label">Right Arm Measurement:</label>
+          <input type="number" class="form-control "id="measureRightArm" formControlName="measureRightArm" placeholder="Insert your right arm measurement" required>
+        </div>
+        <div class=" col-md-3 container">
+          <label for="measureLeftForeArm" class="form-label mt-4" class="col-form-label custom-label">Left Forearm Measurement:</label>
+          <input type="number" class="form-control "id="measureLeftForeArm" formControlName="measureLeftForeArm" placeholder="Insert your left forearm measurement" required>
+        </div>
+        <div class=" col-md-3 container">
+          <label for="measureRightForeArm" class="form-label mt-4" class="col-form-label custom-label">Right Forearm Measurement:</label>
+          <input type="number" class="form-control "id="measureRightForeArm" formControlName="measureRightForeArm" placeholder="Insert your right forearm measurement" required>
+        </div>
+        <div class=" col-md-3 container">
+          <label for="measureAbs" class="form-label mt-4" class="col-form-label custom-label">Abs Measurement:</label>
+          <input type="number" class="form-control "id="measureAbs" formControlName="measureAbs" placeholder="Insert your abs measurement" required>
+        </div>
+        <div class=" col-md-3 container">
+          <label for="measureLeftThigh" class="form-label mt-4" class="col-form-label custom-label">Left Thigh Measurement:</label>
+          <input type="number" class="form-control "id="measureLeftThigh" formControlName="measureLeftThigh" placeholder="Insert your left thigh measurement" required>
+        </div>
+        <div class=" col-md-3 container">
+          <label for="measureRightThigh" class="form-label mt-4" class="col-form-label custom-label">Right Thigh Measurement:</label>
+          <input type="number" class="form-control "id="measureRightThigh" formControlName="measureRightThigh" placeholder="Insert your right thigh measurement" required>
+        </div>
+        <div class=" col-md-3 container">
+          <label for="measureLeftCalf" class="form-label mt-4" class="col-form-label custom-label">Left Calf Measurement:</label>
+          <input type="number" class="form-control "id="measureLeftCalf" formControlName="measureLeftCalf" placeholder="Insert your left calf measurement" required>
+        </div>
+        <div class=" col-md-3 container">
+          <label for="measureRightCalf" class="form-label mt-4" class="col-form-label custom-label">Right Calf Measurement:</label>
+          <input type="number" class="form-control "id="measureRightCalf" formControlName="measureRightCalf" placeholder="Insert your right calf measurement" required>
+        </div>
+      </div>
+
+      <div class="btn-box">
+        <button class="btn btn-success w-40 mx-2 mt-2" type="submit"  [disabled]="!profileForm.valid">{{btnAction}}</button>
+        <button class="btn btn-primary w-40 mx-2 mt-2"[routerLink]="['']" routerLinkActive="router-link-active" >Back</button>
+      </div>
+    </fieldset>
+    </form>
+  </div>
