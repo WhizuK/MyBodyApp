@@ -30,10 +30,23 @@ namespace MyBody.infra.Data.Repositories
             return (await DbSet.AddAsync(entity)).Entity;
         }
 
+        //public TEntity Update(TEntity entity)
+        //{
+     
+        //    var existingEntity = DbSet.Find((object)(entity.GetType().GetProperty("Id")?.GetValue(entity)));
+
+        //    // Atualizar os valores da entidade existente 
+        //    _context.Entry(existingEntity).CurrentValues.SetValues(entity);
+
+        //    return existingEntity;
+        //}
+
+
         public TEntity Update(TEntity entity)
         {
             return (DbSet.Update(entity)).Entity;
         }
+
 
         public TEntity Delete(TEntity entity)
         {

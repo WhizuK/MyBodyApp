@@ -12,8 +12,8 @@ using MyBody.infra.Data;
 namespace MyBody.infra.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240729191441_MyBody1.0")]
-    partial class MyBody10
+    [Migration("20240917190320_mybody")]
+    partial class mybody
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,7 +47,7 @@ namespace MyBody.infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BodyComposition");
+                    b.ToTable("Compositions");
                 });
 
             modelBuilder.Entity("MyBody.Domain.BodyMeasurements", b =>
@@ -93,7 +93,7 @@ namespace MyBody.infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BodyMeasurements");
+                    b.ToTable("Measurements");
                 });
 
             modelBuilder.Entity("MyBody.Domain.User", b =>

@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MyBody.infra.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class MyBody10 : Migration
+    public partial class mybody : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "BodyComposition",
+                name: "Compositions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -24,11 +24,11 @@ namespace MyBody.infra.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BodyComposition", x => x.Id);
+                    table.PrimaryKey("PK_Compositions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "BodyMeasurements",
+                name: "Measurements",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -47,7 +47,7 @@ namespace MyBody.infra.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BodyMeasurements", x => x.Id);
+                    table.PrimaryKey("PK_Measurements", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -63,15 +63,15 @@ namespace MyBody.infra.Data.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Users_BodyComposition_BodyCompositionId",
+                        name: "FK_Users_Compositions_BodyCompositionId",
                         column: x => x.BodyCompositionId,
-                        principalTable: "BodyComposition",
+                        principalTable: "Compositions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Users_BodyMeasurements_BodyMeasurementsId",
+                        name: "FK_Users_Measurements_BodyMeasurementsId",
                         column: x => x.BodyMeasurementsId,
-                        principalTable: "BodyMeasurements",
+                        principalTable: "Measurements",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -94,10 +94,10 @@ namespace MyBody.infra.Data.Migrations
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "BodyComposition");
+                name: "Compositions");
 
             migrationBuilder.DropTable(
-                name: "BodyMeasurements");
+                name: "Measurements");
         }
     }
 }

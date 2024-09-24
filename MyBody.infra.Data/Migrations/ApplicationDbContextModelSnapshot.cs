@@ -44,7 +44,7 @@ namespace MyBody.infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BodyComposition");
+                    b.ToTable("Compositions");
                 });
 
             modelBuilder.Entity("MyBody.Domain.BodyMeasurements", b =>
@@ -90,7 +90,7 @@ namespace MyBody.infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BodyMeasurements");
+                    b.ToTable("Measurements");
                 });
 
             modelBuilder.Entity("MyBody.Domain.User", b =>

@@ -1,4 +1,5 @@
-﻿using MyBody.Application.Services.Contracts;
+﻿using Microsoft.EntityFrameworkCore;
+using MyBody.Application.Services.Contracts;
 using MyBody.Domain;
 
 
@@ -8,6 +9,7 @@ namespace MyBody.Application.Services.Services
     {
         private readonly IUserRepository _repository;
         private readonly IUnitOfWork _unitOfWork;
+
 
         public UserService(IUserRepository repository, IUnitOfWork unitOfWork)
         {
@@ -52,5 +54,8 @@ namespace MyBody.Application.Services.Services
             await _unitOfWork.Commit();
             return entity;
         }
+
+        
+
     }
 }

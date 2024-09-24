@@ -41,14 +41,10 @@ namespace MyBody.WebApp.Controllers
         [HttpPut]
         public async Task<IActionResult> Update(User user)
         {
+            
             return Ok(await _service.Update(user));
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete(User user)
-        {
-            return Ok(await _service.Delete(user));
-        }
 
 
         [HttpDelete("{id:guid}")]
